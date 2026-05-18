@@ -223,6 +223,31 @@
     }
     .teach-card p{color:var(--warm-stone);font-size:.98rem;line-height:1.6;}
     @media (max-width:860px){.teach-grid{grid-template-columns:1fr;}}
+    .frameworks-intro{color:var(--warm-stone);font-size:1.05rem;line-height:1.6;}
+    .compare{
+      display:grid;grid-template-columns:1fr 3px 1fr;
+      background:var(--soft-gray);border:1px solid rgba(17,17,16,.08);
+      border-radius:16px;overflow:hidden;
+    }
+    .compare-col{display:flex;flex-direction:column;gap:1.25rem;padding:clamp(1.75rem,3.5vw,2.75rem);}
+    .compare-divider{background:var(--warm-tan);}
+    .compare-label{
+      font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+      font-size:1.05rem;letter-spacing:.01em;color:var(--off-black);
+    }
+    .compare-list{display:flex;flex-direction:column;gap:.85rem;}
+    .compare-list li{
+      font-size:1rem;line-height:1.5;color:#3a372f;
+      padding-bottom:.85rem;border-bottom:1px solid rgba(17,17,16,.1);
+    }
+    .compare-list li:last-child{border-bottom:none;padding-bottom:0;}
+    .frameworks-caption{
+      margin-top:1.75rem;color:var(--warm-stone);font-size:.95rem;
+    }
+    @media (max-width:680px){
+      .compare{grid-template-columns:1fr;}
+      .compare-divider{height:3px;width:100%;}
+    }
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -327,6 +352,38 @@
             <p>What to actually do with money once it starts coming in. Income versus assets, taxes, and the moves school never taught you.</p>
           </article>
         </div>
+      </div>
+    </section>
+    <section class="section section-light frameworks" id="frameworks">
+      <div class="inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">How I Teach</p>
+          <h2 class="headline">Concepts, Not Scripts</h2>
+          <div class="accent-line"></div>
+          <p class="frameworks-intro">Here's one. Same conversation, two completely different outcomes.</p>
+        </div>
+        <div class="compare reveal">
+          <div class="compare-col">
+            <p class="compare-label">Transactional</p>
+            <ul class="compare-list">
+              <li>Leads with the script.</li>
+              <li>Manages the number.</li>
+              <li>Owns the rep's results.</li>
+              <li>Wins the month.</li>
+            </ul>
+          </div>
+          <div class="compare-divider" aria-hidden="true"></div>
+          <div class="compare-col">
+            <p class="compare-label">Transformational</p>
+            <ul class="compare-list">
+              <li>Leads with the concept.</li>
+              <li>Develops the person.</li>
+              <li>Hands the rep ownership.</li>
+              <li>Builds a career.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="frameworks-caption">One plateaus. One compounds. The course goes deep on the second one.</p>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
