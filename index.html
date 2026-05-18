@@ -591,6 +591,135 @@
       <span class="footer-tag">Build it right. Have fun with it.</span>
     </div>
   </footer>
-  <!-- INSERT SCRIPT -->
+  <script>
+    (function(){
+      var docEl = document.documentElement;
+      docEl.classList.add('js');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* nav scroll state */
+      var nav = document.getElementById('nav');
+      function onScroll(){ if(nav) nav.classList.toggle('scrolled', window.scrollY > 40); }
+      onScroll();
+      window.addEventListener('scroll', onScroll, {passive:true});
+
+      /* mobile menu */
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      function setMenu(open){
+        navLinks.classList.toggle('open', open);
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      if(navToggle && navLinks){
+        navToggle.addEventListener('click', function(){
+          setMenu(!navLinks.classList.contains('open'));
+        });
+        navLinks.querySelectorAll('a').forEach(function(a){
+          a.addEventListener('click', function(){ setMenu(false); });
+        });
+      }
+
+      /* scroll reveals + accent-line draw */
+      var revealEls = document.querySelectorAll('.reveal, .accent-line');
+      if(!reduceMotion && 'IntersectionObserver' in window){
+        revealEls.forEach(function(el){ el.classList.add('pre-reveal'); });
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){
+              e.target.classList.add('is-revealed');
+              io.unobserve(e.target);
+            }
+          });
+        }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+        revealEls.forEach(function(el){ io.observe(el); });
+      }
+
+      /* stat count-up */
+      var proof = document.querySelector('.proof');
+      if(proof && !reduceMotion && 'IntersectionObserver' in window){
+        var po = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){ countUp(); po.disconnect(); }
+          });
+        }, {threshold:0.4});
+        po.observe(proof);
+      }
+      function countUp(){
+        document.querySelectorAll('.proof-num').forEach(function(el){
+          var raw = el.textContent.trim();
+          var m = raw.match(/^(\d+)(\D*)$/);
+          if(!m) return;
+          var target = parseInt(m[1],10), suffix = m[2], cur = 0;
+          var step = Math.max(1, Math.ceil(target/30));
+          var timer = setInterval(function(){
+            cur += step;
+            if(cur >= target){ cur = target; clearInterval(timer); }
+            el.textContent = cur + suffix;
+          }, 28);
+        });
+      }
+
+      /* Work With Me CTA -> pre-select form interest */
+      var interestSelect = document.getElementById('interest');
+      document.querySelectorAll('.work-cta').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var val = btn.getAttribute('data-interest');
+          if(interestSelect && val) interestSelect.value = val;
+          var connect = document.getElementById('connect');
+          if(connect) connect.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth'});
+        });
+      });
+
+      /* waitlist form */
+      var FORM_ENDPOINT = 'REPLACE_WITH_APPS_SCRIPT_URL';
+      var form = document.getElementById('waitlistForm');
+      if(form){
+        var statusEl = document.getElementById('formStatus');
+        var required = ['firstName','lastName','email','interest'];
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var ok = true;
+          required.forEach(function(name){
+            var el = form.elements[name];
+            if(!el) return;
+            var bad = !el.value || (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value));
+            el.classList.toggle('invalid', bad);
+            if(bad) ok = false;
+          });
+          if(!ok){
+            statusEl.textContent = 'Fill in the required fields so I can actually reach you.';
+            statusEl.className = 'form-status err';
+            return;
+          }
+          var btn = form.querySelector('.form-submit');
+          var label = btn.textContent;
+          btn.disabled = true; btn.textContent = 'Sending…';
+          statusEl.textContent = ''; statusEl.className = 'form-status';
+
+          function done(success){
+            btn.disabled = false; btn.textContent = label;
+            if(success){
+              statusEl.textContent = "You're on the list. Check your email.";
+              statusEl.className = 'form-status ok';
+              form.reset();
+            } else {
+              statusEl.textContent = 'Something went wrong — try again, or DM me on Instagram.';
+              statusEl.className = 'form-status err';
+            }
+          }
+
+          if(FORM_ENDPOINT.indexOf('REPLACE_WITH') === 0){
+            done(true); /* not wired yet — confirm optimistically */
+            return;
+          }
+          fetch(FORM_ENDPOINT, {method:'POST', mode:'no-cors', body:new FormData(form)})
+            .then(function(){ done(true); })
+            .catch(function(){ done(false); });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
