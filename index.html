@@ -141,6 +141,30 @@
       .nav-links a{font-size:1.1rem;}
     }
 
+    .hero{
+      display:grid;grid-template-columns:1.05fr .95fr;
+      min-height:100vh;align-items:center;
+    }
+    .hero-text{
+      display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem;
+      padding:8rem var(--pad-x) 9rem;
+    }
+    .hero-headline{
+      font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+      font-size:clamp(2.75rem,6vw,5rem);line-height:1.05;letter-spacing:-.02em;
+    }
+    .hero-support{
+      font-size:clamp(1rem,1.4vw,1.15rem);color:var(--warm-stone);
+      max-width:34rem;line-height:1.6;
+    }
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem;}
+    .hero-photo{position:relative;height:100vh;}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr;min-height:auto;}
+      .hero-text{padding:7.5rem var(--pad-x) 4rem;order:2;}
+      .hero-photo{height:62vh;order:1;}
+    }
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -159,6 +183,21 @@
     </button>
   </nav>
   <main>
+    <header class="hero" id="top">
+      <div class="hero-text">
+        <p class="eyebrow">Sales · Leadership · Investing</p>
+        <h1 class="hero-headline">I Learned This<br>The Hard Way</h1>
+        <div class="accent-line"></div>
+        <p class="hero-support">Built and led the teams. Made the mistakes, kept the lessons, still figuring plenty out. Here's what's held up — for the guys who don't have someone to ask.</p>
+        <div class="hero-cta">
+          <a href="#connect" class="btn btn-primary">Get on the list</a>
+          <a href="#teaching" class="btn btn-secondary">What I teach</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/hero.jpg" alt="Cade Barnes" loading="eager">
+      </div>
+    </header>
     <!-- INSERT SECTIONS ABOVE -->
   </main>
   <!-- INSERT FOOTER -->
