@@ -264,6 +264,31 @@
     .work-card p{color:var(--warm-stone);font-size:.98rem;line-height:1.6;flex-grow:1;}
     .work-cta{margin-top:.25rem;}
     @media (max-width:860px){.work-grid{grid-template-columns:1fr;}}
+    .life-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      grid-auto-rows:1fr;gap:1rem;
+    }
+    .life-tile{
+      position:relative;overflow:hidden;border-radius:16px;
+      aspect-ratio:1;background:var(--warm-dark);
+    }
+    .life-tile-lead{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;}
+    .life-tile img{
+      width:100%;height:100%;object-fit:cover;
+      transition:filter .3s ease;
+    }
+    .life-tile:hover img{filter:brightness(1.08);}
+    .ig-link{
+      display:inline-block;margin-top:1.75rem;
+      font-family:var(--font-data);font-weight:500;font-size:.8rem;
+      letter-spacing:.05em;text-transform:uppercase;color:var(--warm-tan);
+      transition:color .2s ease;
+    }
+    .ig-link:hover{color:var(--bright-tan);}
+    @media (max-width:680px){
+      .life-grid{grid-template-columns:1fr 1fr;}
+      .life-tile-lead{grid-column:span 2;grid-row:span 1;aspect-ratio:16/10;}
+    }
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -430,6 +455,33 @@
             <button type="button" class="btn btn-secondary work-cta" data-interest="The syndicate">Get the details</button>
           </article>
         </div>
+      </div>
+    </section>
+    <section class="section life" id="lifestyle">
+      <div class="inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">Off The Clock</p>
+          <h2 class="headline">There's More To It</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="life-grid reveal">
+          <a class="life-tile life-tile-lead" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">
+            <img src="images/ig1.jpg" alt="Cade Barnes off the clock" loading="lazy">
+          </a>
+          <a class="life-tile" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">
+            <img src="images/ig2.jpg" alt="Cade Barnes off the clock" loading="lazy">
+          </a>
+          <a class="life-tile" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">
+            <img src="images/ig3.jpg" alt="Cade Barnes off the clock" loading="lazy">
+          </a>
+          <a class="life-tile" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">
+            <img src="images/ig4.jpg" alt="Cade Barnes off the clock" loading="lazy">
+          </a>
+          <a class="life-tile" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">
+            <img src="images/ig5.jpg" alt="Cade Barnes off the clock" loading="lazy">
+          </a>
+        </div>
+        <a class="ig-link" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">@mccadebarnes &rarr;</a>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
