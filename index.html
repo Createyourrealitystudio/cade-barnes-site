@@ -211,6 +211,18 @@
       max-width:60rem;
     }
     .pov-support{color:var(--warm-stone);font-size:1rem;max-width:34rem;}
+    .teach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+    .teach-card{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;}
+    .teach-num{
+      font-family:var(--font-data);font-weight:700;font-size:1.4rem;
+      color:var(--warm-tan);letter-spacing:.02em;
+    }
+    .teach-title{
+      font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+      font-size:1.3rem;letter-spacing:-.01em;line-height:1.15;
+    }
+    .teach-card p{color:var(--warm-stone);font-size:.98rem;line-height:1.6;}
+    @media (max-width:860px){.teach-grid{grid-template-columns:1fr;}}
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -286,6 +298,35 @@
         <div class="accent-line pov-line"></div>
         <p class="pov-statement">The moment you claim to be the best, you stop being the best.</p>
         <p class="pov-support">Closed systems calcify. Open ones compound. Everything here starts from that.</p>
+      </div>
+    </section>
+    <section class="section teach" id="teaching">
+      <div class="inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">What I Teach</p>
+          <h2 class="headline">The Skill Stack</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="teach-grid">
+          <article class="card teach-card reveal">
+            <div class="accent-line"></div>
+            <span class="teach-num">01</span>
+            <h3 class="teach-title">Sales &amp; Leadership</h3>
+            <p>The skill of selling and leading people, taught at the concept level — why it works, not just what to say. Frameworks that hold up in any room.</p>
+          </article>
+          <article class="card teach-card reveal">
+            <div class="accent-line"></div>
+            <span class="teach-num">02</span>
+            <h3 class="teach-title">Mindset &amp; Relationships</h3>
+            <p>The inner game behind the outer wins. Identity, ego, staying level when you start winning, and keeping the people who matter.</p>
+          </article>
+          <article class="card teach-card reveal">
+            <div class="accent-line"></div>
+            <span class="teach-num">03</span>
+            <h3 class="teach-title">Money &amp; Investing</h3>
+            <p>What to actually do with money once it starts coming in. Income versus assets, taxes, and the moves school never taught you.</p>
+          </article>
+        </div>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
