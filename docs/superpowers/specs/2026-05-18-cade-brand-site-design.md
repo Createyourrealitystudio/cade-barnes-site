@@ -28,7 +28,7 @@ The site is the hub people land on from social and the link-in-bio: it introduce
 2. The moment you claim to be the best, you stop being the best.
 3. Big brother, not guru.
 
-**Income/success handling.** Cade earns well (over $1M across two years, several properties this year). This is real and may be referenced as understated proof inside prose — never as a hero number, never as a "$1M" stat callout. The old-money-flex rule applies: visible in the details, never announced.
+**Income/success handling.** Money stays off the site entirely for now — no income figures and no earnings references anywhere, including in prose. Money is only ever surfaced later, with real context (e.g. investment-property photos Cade will supply). Until then, credibility is carried by experience, role, and the quality of the teaching — never by numbers about money.
 
 ## 3. Information Architecture
 
@@ -136,11 +136,11 @@ Two-column (text left, image right); stacks on tablet.
 - Quiet bottom zone (no scroll-indicator gimmick).
 
 ### 5.3 Proof Bar
-Full-width row, four stat blocks divided by hairline borders. Proof, not flex — no dollar figures.
-- `7` — Years on the doors ⚠
-- `2×` — Promoted at V3 ⚠
-- `Partnership` — Teams built and led to it ⚠
-- `Today` — Still selling in the field
+Full-width row, four stat blocks divided by hairline borders. Proof, not flex — no dollar figures. Each block is a short Space Grotesk token (the loud word/number) over a small uppercase label. All values ⚠ pending Cade's confirmation (§9).
+- `7` — Years on the doors
+- `Partner` — Reached it in pest control, before this
+- `Solar` — Leads a sales downline today
+- `Daily` — Still selling on the doors himself
 
 ### 5.4 About
 Two-column (prose left, portrait/environment image right — reuse an existing `images/ig*.jpg` or `hero` crop).
@@ -149,8 +149,8 @@ Two-column (prose left, portrait/environment image right — reuse an existing `
 - Accent line
 - Prose (3 short paragraphs, sentence case), covering the origin beats:
   1. Young guy, no older brother, learned everything the hard way; found door-to-door sales and fell in love with the skill.
-  2. Hit partnership, built and led teams to real numbers; the money followed — referenced plainly and briefly, not as a flex — but what's worth talking about is what it cost to learn.
-  3. Saw the people at the top either burn out or get full of themselves; wanted neither. Decided to be the person he wishes he'd had, and to share the work in the open while he's still doing it.
+  2. Worked his way up to partner at a pest control company; built and led sales teams and learned what that actually takes — including the mistakes that taught him the most.
+  3. Saw the people at the top either burn out or get full of themselves; wanted neither. Moved on from pest control and now leads a sales downline at a solar company — still on the doors, sharing the work in the open, being the person he wishes he'd had.
 
 ### 5.5 POV Band
 Full-width Off-Black band, centered, generous vertical padding.
@@ -176,20 +176,21 @@ The only Clean White section. Background `--clean-white`, text `--off-black`, ca
 - Caption beneath (Satoshi, Stone): "One plateaus. One compounds. The course goes deep on the second one."
 
 ### 5.8 Work With Me
-Eyebrow `WHAT'S COMING`, headline `WORK WITH ME`, accent line. Three offer cards — all forthcoming, all soft CTAs pointing to `#connect`. A quiet line under the headline: "Nothing's for sale yet. The list is how you hear first."
-- **THE COURSE** — "Sales and psychology training — the principles underneath the scripts, the part most reps never get taught. In development now." CTA: "Join the waitlist"
-- **COACHING** — "Group and one-on-one. Direct work on your sales, your team, and how you lead. Opening to a small group first." CTA: "Request a spot"
-- **THE SYNDICATE** — "Access to real investment deals, qualification-gated — built for guys serious about turning income into assets. On the way." CTA: "Get the details"
+Eyebrow `WHAT'S COMING`, headline `WORK WITH ME`, accent line. Three offer cards — all forthcoming. A quiet line under the headline: "Nothing's for sale yet. The list is how you hear first." Each card carries a small `COMING SOON` tag (Space Grotesk uppercase, Warm Tan). Each CTA scrolls to the Connect form (§5.10) and pre-selects the matching option in the form's "What are you here for?" dropdown.
+- **THE COURSE** — "Sales and psychology training — the principles underneath the scripts, the part most reps never get taught. In development now." CTA: "Join the waitlist" (pre-selects *Sales course*)
+- **COACHING** — "Group and one-on-one. Direct work on your sales, your team, and how you lead. Opening to a small group first." CTA: "Request a spot" (pre-selects *Coaching*)
+- **THE SYNDICATE** — "Access to real investment deals, qualification-gated — built for guys serious about turning income into assets. On the way." CTA: "Get the details" (pre-selects *The syndicate*)
 
 ### 5.9 Lifestyle
 Eyebrow `OFF THE CLOCK`, headline `THERE'S MORE TO IT`, accent line. Instagram-style grid of the five existing `images/ig*.jpg`, first tile spanning 2×2. Link to `@mccadebarnes`. Candid, warm — old-money-flex rule respected (no staged or performative shots).
 
 ### 5.10 Connect
-Two-column. Left: eyebrow `GET ON THE LIST`, headline `LET'S CONNECT`, accent line, short copy ("Course, coaching, the syndicate, or you just want to follow the build — get on the list and you'll hear first. No spam, no pitch-slapping."), and an Instagram follow link. Right: waitlist form in a card.
+Two-column. Left: eyebrow `GET ON THE LIST`, headline `LET'S CONNECT`, accent line, short copy ("Course, coaching, the syndicate, or you just want to follow the build — get on the list and you'll hear first. No spam, no pitch-slapping."), and an Instagram follow link. Right: a working waitlist form in a card.
 - Form fields: First name, Last name, Email, "What are you here for?" select (Sales course / Coaching / The syndicate / Just following along), optional Message.
 - Submit button: "Get on the list".
-- Submission stays a client-side confirmation stub (as today). Wiring to a real capture backend is out of scope (§8).
-- Validation errors use `--warm-red`.
+- The form is **functional** — on submit, JS POSTs the fields to a Google Apps Script web-app endpoint (§7.2). That script appends a timestamped row to a Google Sheet Cade owns, emails Cade a notification with the lead details, and emails the submitter a short confirmation.
+- Client behavior: required-field validation (errors styled with `--warm-red`); on submit the button shows a sending state, then an inline success message ("You're on the list. Check your email."); the form resets.
+- Graceful pre-deploy behavior: the endpoint lives in a single JS constant `FORM_ENDPOINT`. While it still holds the placeholder value, the form skips the network POST and shows the success state anyway, so the site is fully usable before the script is wired. Once the real `/exec` URL is pasted in, submissions post for real.
 
 ### 5.11 Footer
 Wordmark `CADE BARNES`, Instagram link, copyright `© 2026 Cade Barnes`. One quiet line (Space Grotesk micro, Stone): "Build it right. Have fun with it."
@@ -209,14 +210,23 @@ Wordmark `CADE BARNES`, Instagram link, copyright `© 2026 Cade Barnes`. One qui
 
 ## 7. Technical Approach
 
+### 7.1 Site
 - Remains a single static `index.html` with inline `<style>` and `<script>`. No build step, no framework — correct for a one-page brand site and matches the current Vercel static deployment.
 - Images reused from `images/`. No new assets required for the rebuild.
-- Vanilla JS only: nav scroll state, mobile menu, smooth anchor scroll, IntersectionObserver fade-ins, stat count-up, form stub.
+- Vanilla JS only: nav scroll state, mobile menu, smooth anchor scroll, IntersectionObserver fade-ins, stat count-up, Work-With-Me CTA → form pre-select, and the form submit/validation handler.
 - Semantic HTML, descriptive `alt` text, visible focus states (Warm Tan focus ring), `prefers-reduced-motion` honored.
+
+### 7.2 Form backend (Google Apps Script → Google Sheet)
+- Delivered as a separate file `apps-script.gs` in the repo, plus setup instructions at `docs/form-setup.md`.
+- The script's `doPost(e)` reads the submitted fields, appends a row `[timestamp, first name, last name, email, interest, message]` to the bound Google Sheet, sends Cade a notification email with the lead details, and sends the submitter a short confirmation email. It returns a JSON `ContentService` response.
+- Cade's notification address and the confirmation email copy live in clearly marked constants at the top of the script.
+- Client posts via `fetch` with a `FormData` body (a "simple request" — no CORS preflight). The success state is shown on request completion.
+- One-time manual setup by Cade/the team (documented in `form-setup.md`): create a Google Sheet → Extensions → Apps Script → paste `apps-script.gs` → set the notification email → Deploy as Web app (Execute as: Me; Access: Anyone) → copy the `/exec` URL → paste it into the `FORM_ENDPOINT` constant in `index.html`. This step needs Cade's Google account and cannot be done for him.
 
 ## 8. Out of Scope
 
-- Wiring the contact form to a real backend / email capture service (stays a client-side stub).
+- The one-time Google account setup itself — creating the Sheet and deploying the Apps Script (the spec delivers the script and step-by-step instructions; the deploy is Cade's to run).
+- Money / income content and investment-property imagery — Cade will supply property photos later, to be added then with proper context.
 - Multi-page expansion, blog, or CMS.
 - New or reshot photography (the brand guide flags a future content shoot; the rebuild uses existing images).
 - Separate landing pages for the course / coaching / syndicate (they are forthcoming; the site only collects interest).
@@ -224,7 +234,14 @@ Wordmark `CADE BARNES`, Instagram link, copyright `© 2026 Cade Barnes`. One qui
 
 ## 9. Open Content Items (verify with Cade before launch)
 
-- Exact proof-bar figures: years on the doors, number of promotions at V3, the right framing for "partnership" (pest control vs V3). Current values are best-effort from the strategy doc and marked ⚠.
-- Whether the origin paragraph may reference the income/properties at all, and how lightly.
+- Exact proof-bar values: real years on the doors, and ideally a concrete number for the solar downline (e.g. team/rep count) to replace a word-token with a stronger stat.
+- Whether to name the solar company explicitly (e.g. "V3") or keep it generic as "a solar company." Draft copy keeps it generic.
+- Cade's email address for form notifications, and the wording of the submitter confirmation email.
 - Confirmation of the Instagram handle `@mccadebarnes` as the canonical link.
-- Final offer names ("The Course", "The Syndicate") and whether waitlist language is accurate to current plans.
+- Final offer names ("The Course", "The Syndicate") and whether the waitlist language matches current plans.
+
+## 10. Deliverables
+
+- `index.html` — the rebuilt single-page site.
+- `apps-script.gs` — the Google Apps Script form backend.
+- `docs/form-setup.md` — step-by-step setup/deploy instructions for the form.
