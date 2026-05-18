@@ -202,6 +202,15 @@
       .about-photo{order:-1;}
       .about-photo img{aspect-ratio:3/2;}
     }
+    .pov{background:var(--warm-dark);padding:clamp(4.5rem,9vw,7.5rem) var(--pad-x);}
+    .pov-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;}
+    .pov-line{align-self:center;}
+    .pov-statement{
+      font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+      font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.2;letter-spacing:-.015em;
+      max-width:60rem;
+    }
+    .pov-support{color:var(--warm-stone);font-size:1rem;max-width:34rem;}
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -270,6 +279,13 @@
         <div class="about-photo reveal">
           <img src="images/ig5.jpg" alt="Cade Barnes" loading="lazy">
         </div>
+      </div>
+    </section>
+    <section class="pov">
+      <div class="inner pov-inner reveal">
+        <div class="accent-line pov-line"></div>
+        <p class="pov-statement">The moment you claim to be the best, you stop being the best.</p>
+        <p class="pov-support">Closed systems calcify. Open ones compound. Everything here starts from that.</p>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
