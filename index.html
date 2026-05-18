@@ -191,6 +191,17 @@
       .proof-item:nth-child(2){border-right:none;}
       .proof-item:nth-child(1),.proof-item:nth-child(2){border-bottom:1px solid rgba(247,244,240,.08);}
     }
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2.5rem,5vw,5rem);align-items:center;}
+    .about-text{display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem;}
+    .about-text .accent-line{margin:.3rem 0 .5rem;}
+    .about-text h2{margin-top:.3rem;}
+    .about-text p{color:var(--warm-stone);font-size:1.05rem;line-height:1.65;}
+    .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;}
+    @media (max-width:860px){
+      .about-grid{grid-template-columns:1fr;}
+      .about-photo{order:-1;}
+      .about-photo img{aspect-ratio:3/2;}
+    }
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -244,6 +255,21 @@
         <span class="proof-tick"></span>
         <span class="proof-num">Daily</span>
         <span class="proof-label">Still on the doors himself</span>
+      </div>
+    </section>
+    <section class="section about" id="about">
+      <div class="inner about-grid">
+        <div class="about-text reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="headline">Nobody Handed Me<br>A Roadmap</h2>
+          <div class="accent-line"></div>
+          <p>I grew up without an older brother to show me how any of this worked, so I learned it the hard way — by doing it. Door-to-door sales is where it clicked, and I fell in love with the skill of it.</p>
+          <p>I worked my way up to partner at a pest control company, then into solar — two of the hardest doors in door-to-door. I built and led sales teams the whole way, and learned what that actually takes. Mistakes included.</p>
+          <p>I watched the guys at the top either burn out or get full of themselves. I wanted neither. So now I lead a sales downline, still sell on the doors myself, and put the real lessons out in the open — the older brother I wish I'd had.</p>
+        </div>
+        <div class="about-photo reveal">
+          <img src="images/ig5.jpg" alt="Cade Barnes" loading="lazy">
+        </div>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
