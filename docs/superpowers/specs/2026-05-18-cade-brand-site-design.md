@@ -130,7 +130,7 @@ Two-column (text left, image right); stacks on tablet.
 - Eyebrow: `SALES · LEADERSHIP · INVESTING`
 - Headline: `I LEARNED THIS THE HARD WAY`
 - Accent line
-- Support (Satoshi): "Built and led the teams. Made the money, made the mistakes, still figuring plenty out. Here's what's held up — for the guys who don't have someone to ask."
+- Support (Satoshi): "Built and led the teams. Made the mistakes, kept the lessons, still figuring plenty out. Here's what's held up — for the guys who don't have someone to ask." (The originally drafted line said "made the money" — revised to keep money off the site per §2.)
 - CTAs: primary "Get on the list" → `#connect`; secondary "What I teach" → `#teaching`
 - Image: `images/hero.jpg`, warm-toned, object-fit cover. No gradient overlay on the image — it sits clean in its column against the Off-Black canvas.
 - Quiet bottom zone (no scroll-indicator gimmick).
