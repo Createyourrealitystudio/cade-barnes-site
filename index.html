@@ -248,6 +248,22 @@
       .compare{grid-template-columns:1fr;}
       .compare-divider{height:3px;width:100%;}
     }
+    .work-note{color:var(--warm-stone);font-size:1.05rem;}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+    .work-card{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;}
+    .tag{
+      font-family:var(--font-data);font-weight:500;font-size:.66rem;
+      letter-spacing:.08em;text-transform:uppercase;color:var(--warm-tan);
+      border:1px solid rgba(196,180,154,.35);border-radius:999px;
+      padding:.35rem .7rem;
+    }
+    .work-title{
+      font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+      font-size:1.3rem;letter-spacing:-.01em;
+    }
+    .work-card p{color:var(--warm-stone);font-size:.98rem;line-height:1.6;flex-grow:1;}
+    .work-cta{margin-top:.25rem;}
+    @media (max-width:860px){.work-grid{grid-template-columns:1fr;}}
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -384,6 +400,36 @@
           </div>
         </div>
         <p class="frameworks-caption">One plateaus. One compounds. The course goes deep on the second one.</p>
+      </div>
+    </section>
+    <section class="section work" id="work">
+      <div class="inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">What's Coming</p>
+          <h2 class="headline">Work With Me</h2>
+          <div class="accent-line"></div>
+          <p class="work-note">Nothing's for sale yet. The list is how you hear first.</p>
+        </div>
+        <div class="work-grid">
+          <article class="card work-card reveal">
+            <span class="tag">Coming Soon</span>
+            <h3 class="work-title">The Course</h3>
+            <p>Sales and psychology training — the principles underneath the scripts, the part most reps never get taught. In development now.</p>
+            <button type="button" class="btn btn-secondary work-cta" data-interest="Sales course">Join the waitlist</button>
+          </article>
+          <article class="card work-card reveal">
+            <span class="tag">Coming Soon</span>
+            <h3 class="work-title">Coaching</h3>
+            <p>Group and one-on-one. Direct work on your sales, your team, and how you lead. Opening to a small group first.</p>
+            <button type="button" class="btn btn-secondary work-cta" data-interest="Coaching">Request a spot</button>
+          </article>
+          <article class="card work-card reveal">
+            <span class="tag">Coming Soon</span>
+            <h3 class="work-title">The Syndicate</h3>
+            <p>Access to real investment deals, qualification-gated — built for guys serious about turning income into assets. On the way.</p>
+            <button type="button" class="btn btn-secondary work-cta" data-interest="The syndicate">Get the details</button>
+          </article>
+        </div>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
