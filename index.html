@@ -17,7 +17,7 @@
       --warm-tan:#C4B49A;--bright-tan:#D9C9AD;--warm-stone:#8A8279;--warm-red:#B85C4A;
       --font-display:'General Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       --font-body:'Satoshi',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-      --font-data:'Space Grotesk',ui-monospace,SFMono-Regular,monospace;
+      --font-data:'Space Grotesk',system-ui,-apple-system,sans-serif;
       --pad-x:clamp(1.5rem,5vw,5rem);
       --maxw:1280px;
     }
@@ -49,6 +49,7 @@
       letter-spacing:-.015em;line-height:1.1;font-size:clamp(2rem,4vw,3.2rem);
     }
     .section-light .headline{color:var(--off-black);}
+    .section-light .eyebrow{color:var(--warm-stone);}
 
     /* accent line — the only decorative element */
     .accent-line{
@@ -64,7 +65,7 @@
       display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
       font-family:var(--font-display);font-weight:600;font-size:.82rem;
       letter-spacing:.02em;text-transform:uppercase;
-      padding:1rem 1.75rem;border-radius:14px;border:1px solid transparent;
+      padding:1rem 1.75rem;border-radius:16px;border:1px solid transparent;
       cursor:pointer;text-decoration:none;
       transition:background .25s ease,color .25s ease,border-color .25s ease;
     }
