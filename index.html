@@ -97,11 +97,66 @@
       .accent-line.pre-reveal{transform:none!important;}
     }
 
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:1.25rem var(--pad-x);
+      transition:background .3s ease,padding .3s ease,border-color .3s ease;
+      border-bottom:1px solid transparent;
+    }
+    .nav.scrolled{
+      background:rgba(17,17,16,.88);backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      padding-top:.85rem;padding-bottom:.85rem;
+      border-bottom-color:rgba(247,244,240,.08);
+    }
+    .nav-logo{
+      font-family:var(--font-display);font-weight:700;font-size:1rem;
+      letter-spacing:.01em;color:var(--clean-white);
+    }
+    .nav-links{display:flex;gap:2rem;}
+    .nav-links a{
+      font-family:var(--font-data);font-weight:500;font-size:.74rem;
+      letter-spacing:.06em;text-transform:uppercase;color:var(--warm-stone);
+      transition:color .2s ease;
+    }
+    .nav-links a:hover{color:var(--bright-tan);}
+    .nav-toggle{
+      display:none;flex-direction:column;gap:5px;
+      background:none;border:none;cursor:pointer;padding:4px;z-index:120;
+    }
+    .nav-toggle span{width:24px;height:2px;background:var(--clean-white);transition:all .25s ease;}
+    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle.open span:nth-child(2){opacity:0;}
+    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    @media (max-width:860px){
+      .nav-toggle{display:flex;}
+      .nav-links{
+        position:fixed;inset:0;background:var(--off-black);
+        flex-direction:column;align-items:center;justify-content:center;gap:2.25rem;
+        transform:translateX(100%);transition:transform .3s ease;
+      }
+      .nav-links.open{transform:translateX(0);}
+      .nav-links a{font-size:1.1rem;}
+    }
+
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
 <body>
-  <!-- INSERT NAV -->
+  <nav class="nav" id="nav">
+    <a href="#top" class="nav-logo">CADE BARNES</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#frameworks">Frameworks</a></li>
+      <li><a href="#work">Work With Me</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
   <main>
     <!-- INSERT SECTIONS ABOVE -->
   </main>
