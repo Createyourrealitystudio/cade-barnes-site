@@ -165,6 +165,32 @@
       .hero-text{padding:7.5rem var(--pad-x) 4rem;order:2;}
       .hero-photo{height:62vh;order:1;}
     }
+    .proof{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      border-top:1px solid rgba(247,244,240,.08);
+      border-bottom:1px solid rgba(247,244,240,.08);
+    }
+    .proof-item{
+      display:flex;flex-direction:column;gap:.6rem;
+      padding:clamp(2.25rem,4vw,3.25rem) clamp(1.25rem,2.5vw,2.25rem);
+      border-right:1px solid rgba(247,244,240,.08);
+    }
+    .proof-item:last-child{border-right:none;}
+    .proof-tick{width:34px;height:3px;background:var(--warm-tan);}
+    .proof-num{
+      font-family:var(--font-data);font-weight:700;
+      font-size:clamp(2.5rem,4.5vw,4rem);line-height:1;letter-spacing:.01em;
+      color:var(--clean-white);
+    }
+    .proof-label{
+      font-family:var(--font-data);font-weight:500;font-size:.74rem;
+      letter-spacing:.05em;text-transform:uppercase;color:var(--warm-stone);
+    }
+    @media (max-width:680px){
+      .proof{grid-template-columns:1fr 1fr;}
+      .proof-item:nth-child(2){border-right:none;}
+      .proof-item:nth-child(1),.proof-item:nth-child(2){border-bottom:1px solid rgba(247,244,240,.08);}
+    }
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -196,6 +222,28 @@
       </div>
       <div class="hero-photo">
         <img src="images/hero.jpg" alt="Cade Barnes" loading="eager">
+      </div>
+    </section>
+    <section class="proof" aria-label="Track record">
+      <div class="proof-item">
+        <span class="proof-tick"></span>
+        <span class="proof-num">7</span>
+        <span class="proof-label">Years on the doors</span>
+      </div>
+      <div class="proof-item">
+        <span class="proof-tick"></span>
+        <span class="proof-num">2&times;</span>
+        <span class="proof-label">Promoted in solar</span>
+      </div>
+      <div class="proof-item">
+        <span class="proof-tick"></span>
+        <span class="proof-num">Partner</span>
+        <span class="proof-label">Reached it in pest control</span>
+      </div>
+      <div class="proof-item">
+        <span class="proof-tick"></span>
+        <span class="proof-num">Daily</span>
+        <span class="proof-label">Still on the doors himself</span>
       </div>
     </section>
     <!-- INSERT SECTIONS ABOVE -->
