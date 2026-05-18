@@ -136,11 +136,11 @@ Two-column (text left, image right); stacks on tablet.
 - Quiet bottom zone (no scroll-indicator gimmick).
 
 ### 5.3 Proof Bar
-Full-width row, four stat blocks divided by hairline borders. Proof, not flex — no dollar figures. Each block is a short Space Grotesk token (the loud word/number) over a small uppercase label. All values ⚠ pending Cade's confirmation (§9).
-- `7` — Years on the doors
-- `Partner` — Reached it in pest control, before this
-- `Solar` — Leads a sales downline today
-- `Daily` — Still selling on the doors himself
+Full-width row, four stat blocks divided by hairline borders. Proof, not flex — no dollar figures. Each block is a short Space Grotesk token (the loud word/number) over a small uppercase label.
+- `7` — Years on the doors ⚠ (exact figure pending — see §9)
+- `2×` — Promoted at the solar company (confirmed)
+- `Partner` — Reached it in pest control, before this (confirmed)
+- `Daily` — Still selling on the doors himself (confirmed) — the ICP's single most important credibility filter
 
 ### 5.4 About
 Two-column (prose left, portrait/environment image right — reuse an existing `images/ig*.jpg` or `hero` crop).
@@ -149,8 +149,8 @@ Two-column (prose left, portrait/environment image right — reuse an existing `
 - Accent line
 - Prose (3 short paragraphs, sentence case), covering the origin beats:
   1. Young guy, no older brother, learned everything the hard way; found door-to-door sales and fell in love with the skill.
-  2. Worked his way up to partner at a pest control company; built and led sales teams and learned what that actually takes — including the mistakes that taught him the most.
-  3. Saw the people at the top either burn out or get full of themselves; wanted neither. Moved on from pest control and now leads a sales downline at a solar company — still on the doors, sharing the work in the open, being the person he wishes he'd had.
+  2. Worked his way up to partner at a pest control company, then into solar — two of the hardest doors in door-to-door — building and leading sales teams the whole way, and learning what that actually takes, mistakes included.
+  3. Saw the people at the top either burn out or get full of themselves; wanted neither. Today he still leads a sales downline and still sells on the doors himself — sharing the work in the open as he does it, being the person he wishes he'd had.
 
 ### 5.5 POV Band
 Full-width Off-Black band, centered, generous vertical padding.
@@ -226,7 +226,8 @@ Wordmark `CADE BARNES`, Instagram link, copyright `© 2026 Cade Barnes`. One qui
 ## 8. Out of Scope
 
 - The one-time Google account setup itself — creating the Sheet and deploying the Apps Script (the spec delivers the script and step-by-step instructions; the deploy is Cade's to run).
-- Money / income content and investment-property imagery — Cade will supply property photos later, to be added then with proper context.
+- Money / income content — confirmed figures exist ($1M+ over two years, sub-2% effective tax rate) but stay off the site for now per direction; to be added later only with real context (e.g. investment-property photos Cade will supply).
+- Peer / network proof that isn't Cade's to claim on his own site — colleague endorsements (e.g. a set closer saying he'd follow Cade anywhere) and named high-earner connections belong in collab content, not on the site.
 - Multi-page expansion, blog, or CMS.
 - New or reshot photography (the brand guide flags a future content shoot; the rebuild uses existing images).
 - Separate landing pages for the course / coaching / syndicate (they are forthcoming; the site only collects interest).
