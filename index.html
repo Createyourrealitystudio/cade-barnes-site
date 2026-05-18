@@ -289,6 +289,58 @@
       .life-grid{grid-template-columns:1fr 1fr;}
       .life-tile-lead{grid-column:span 2;grid-row:span 1;aspect-ratio:16/10;}
     }
+    .connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:start;}
+    .connect-text{display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem;}
+    .connect-text .accent-line{margin:.3rem 0 .4rem;}
+    .connect-text p{color:var(--warm-stone);font-size:1.05rem;line-height:1.65;max-width:30rem;}
+    .connect-form{
+      background:var(--warm-dark);border:1px solid rgba(247,244,240,.07);
+      border-radius:16px;padding:clamp(1.75rem,3.5vw,2.5rem);
+      display:flex;flex-direction:column;gap:1.1rem;
+    }
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .field{display:flex;flex-direction:column;gap:.45rem;}
+    .field label{
+      font-family:var(--font-data);font-weight:500;font-size:.7rem;
+      letter-spacing:.06em;text-transform:uppercase;color:var(--warm-stone);
+    }
+    .field .optional{text-transform:none;letter-spacing:0;opacity:.7;}
+    .field input,.field select,.field textarea{
+      font-family:var(--font-body);font-size:.98rem;color:var(--clean-white);
+      background:var(--off-black);border:1px solid rgba(247,244,240,.12);
+      border-radius:12px;padding:.85rem .9rem;width:100%;
+      transition:border-color .2s ease;
+    }
+    .field textarea{resize:vertical;min-height:84px;}
+    .field input:focus,.field select:focus,.field textarea:focus{
+      outline:none;border-color:var(--warm-tan);
+    }
+    .field input.invalid,.field select.invalid{border-color:var(--warm-red);}
+    .form-submit{width:100%;margin-top:.35rem;}
+    .form-status{font-size:.9rem;min-height:1.2em;}
+    .form-status.ok{color:var(--warm-tan);}
+    .form-status.err{color:var(--warm-red);}
+    .footer{
+      display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+      flex-wrap:wrap;
+      padding:2.5rem var(--pad-x);
+      border-top:1px solid rgba(247,244,240,.08);
+    }
+    .footer-logo{font-family:var(--font-display);font-weight:700;font-size:.95rem;}
+    .footer-meta{
+      display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+      font-family:var(--font-data);font-weight:500;font-size:.72rem;
+      letter-spacing:.04em;color:var(--warm-stone);
+    }
+    .footer-meta a:hover{color:var(--bright-tan);}
+    .footer-tag{color:var(--warm-tan);}
+    @media (max-width:860px){
+      .connect-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:680px){
+      .form-row{grid-template-columns:1fr;}
+      .footer{flex-direction:column;align-items:flex-start;}
+    }
     /* INSERT SECTION CSS ABOVE */
   </style>
 </head>
@@ -484,9 +536,61 @@
         <a class="ig-link" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">@mccadebarnes &rarr;</a>
       </div>
     </section>
+    <section class="section connect" id="connect">
+      <div class="inner connect-grid">
+        <div class="connect-text reveal">
+          <p class="eyebrow">Get On The List</p>
+          <h2 class="headline">Let's Connect</h2>
+          <div class="accent-line"></div>
+          <p>Course, coaching, the syndicate, or you just want to follow the build — get on the list and you'll hear first. No spam, no pitch-slapping.</p>
+          <a class="ig-link" href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">@mccadebarnes &rarr;</a>
+        </div>
+        <div class="connect-form-wrap reveal">
+          <form class="connect-form" id="waitlistForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="interest">What are you here for?</label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected>Pick one</option>
+                <option>Sales course</option>
+                <option>Coaching</option>
+                <option>The syndicate</option>
+                <option>Just following along</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Anything else? <span class="optional">(optional)</span></label>
+              <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Get on the list</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
     <!-- INSERT SECTIONS ABOVE -->
   </main>
-  <!-- INSERT FOOTER -->
+  <footer class="footer">
+    <span class="footer-logo">CADE BARNES</span>
+    <div class="footer-meta">
+      <a href="https://www.instagram.com/mccadebarnes/" target="_blank" rel="noopener">Instagram</a>
+      <span>&copy; 2026 Cade Barnes</span>
+      <span class="footer-tag">Build it right. Have fun with it.</span>
+    </div>
+  </footer>
   <!-- INSERT SCRIPT -->
 </body>
 </html>
