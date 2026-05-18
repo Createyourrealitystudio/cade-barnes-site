@@ -111,7 +111,7 @@
       border-bottom-color:rgba(247,244,240,.08);
     }
     .nav-logo{
-      font-family:var(--font-display);font-weight:700;font-size:1rem;
+      font-family:var(--font-display);font-weight:600;font-size:1rem;
       letter-spacing:.01em;color:var(--clean-white);
     }
     .nav-links{display:flex;gap:2rem;}
@@ -134,9 +134,10 @@
       .nav-links{
         position:fixed;inset:0;background:var(--off-black);
         flex-direction:column;align-items:center;justify-content:center;gap:2.25rem;
-        transform:translateX(100%);transition:transform .3s ease;
+        transform:translateX(100%);visibility:hidden;
+        transition:transform .3s ease,visibility .3s ease;
       }
-      .nav-links.open{transform:translateX(0);}
+      .nav-links.open{transform:translateX(0);visibility:visible;}
       .nav-links a{font-size:1.1rem;}
     }
 
