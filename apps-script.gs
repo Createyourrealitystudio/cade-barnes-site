@@ -3,7 +3,7 @@
  *
  * This script is bound to a Google Sheet and deployed as a Web app.
  * It receives POSTs from the site's waitlist form, appends a row to the
- * sheet, emails Cade a notification, and emails the submitter a confirmation.
+ * sheet, and emails Cade a notification of the new lead.
  *
  * Full setup instructions: docs/form-setup.md
  */
@@ -44,23 +44,6 @@ function doPost(e) {
           'Here for: ' + interest,
           'Message:  ' + (message || '(none)'),
           'Time:     ' + now
-        ].join('\n')
-      });
-    }
-
-    // Confirm to the submitter
-    if (/^\S+@\S+\.\S+$/.test(email)) {
-      MailApp.sendEmail({
-        to: email,
-        subject: "You're on the list",
-        body: [
-          'Hey ' + (first || 'there') + ',',
-          '',
-          "You're on the list. When there's something real to share — the course, "
-            + 'coaching, or the syndicate — you\'ll be among the first to hear.',
-          '',
-          'Talk soon,',
-          'Cade'
         ].join('\n')
       });
     }

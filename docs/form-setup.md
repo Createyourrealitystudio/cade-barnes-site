@@ -61,7 +61,6 @@ it just shows the success message without recording anything.
 1. On the live site, fill in the waitlist form and submit.
 2. Confirm a new row appears in the **Waitlist** tab of the spreadsheet.
 3. Confirm the notification email arrives at `NOTIFY_EMAIL`.
-4. Confirm the address you submitted with receives the confirmation email.
 
 ## Updating the script later
 

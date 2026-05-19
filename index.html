@@ -320,6 +320,9 @@
     .form-status{font-size:.9rem;min-height:1.2em;}
     .form-status.ok{color:var(--warm-tan);}
     .form-status.err{color:var(--warm-red);}
+    .connect-form .field,.connect-form .form-submit{transition:opacity .35s ease;}
+    .connect-form.submitted .field,.connect-form.submitted .form-submit{opacity:.35;}
+    .connect-form.submitted .form-status{font-size:1.05rem;}
     .footer{
       display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
       flex-wrap:wrap;
@@ -699,12 +702,14 @@
           statusEl.textContent = ''; statusEl.className = 'form-status';
 
           function done(success){
-            btn.disabled = false; btn.textContent = label;
             if(success){
-              statusEl.textContent = "You're on the list. Check your email.";
+              form.classList.add('submitted');
+              Array.prototype.forEach.call(form.elements, function(el){ el.disabled = true; });
+              btn.textContent = "You're on the list ✓";
+              statusEl.textContent = "You're on the list — you're good to go.";
               statusEl.className = 'form-status ok';
-              form.reset();
             } else {
+              btn.disabled = false; btn.textContent = label;
               statusEl.textContent = 'Something went wrong — try again, or DM me on Instagram.';
               statusEl.className = 'form-status err';
             }
