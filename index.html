@@ -101,14 +101,11 @@
       position:fixed;top:0;left:0;right:0;z-index:100;
       display:flex;align-items:center;justify-content:space-between;
       padding:1.25rem var(--pad-x);
-      background:rgba(17,17,16,.7);
-      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-      transition:background .3s ease,padding .3s ease,border-color .3s ease;
+      background:var(--off-black);
+      transition:padding .3s ease,border-color .3s ease;
       border-bottom:1px solid transparent;
     }
     .nav.scrolled{
-      background:rgba(17,17,16,.88);backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
       padding-top:.85rem;padding-bottom:.85rem;
       border-bottom-color:rgba(247,244,240,.08);
     }
@@ -140,7 +137,11 @@
         transition:transform .3s ease,visibility .3s ease;
       }
       .nav-links.open{transform:translateX(0);visibility:visible;}
-      .nav-links a{font-size:1.1rem;}
+      .nav-links a{
+        font-family:var(--font-display);font-weight:600;
+        font-size:1.5rem;letter-spacing:-.01em;color:var(--clean-white);
+      }
+      .nav-links a:hover{color:var(--bright-tan);}
     }
 
     .hero{
@@ -618,6 +619,7 @@
         navToggle.classList.toggle('open', open);
         navToggle.setAttribute('aria-expanded', String(open));
         navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.style.overflow = open ? 'hidden' : '';
       }
       if(navToggle && navLinks){
         navToggle.addEventListener('click', function(){
